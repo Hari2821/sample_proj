@@ -1,0 +1,19 @@
+Test → Configure test event → Event name: sample
+
+Event JSON:
+{
+  "sessionState": {
+    "intent": {
+      "name": "GetStudentInfo",
+      "slots": {
+        "student_id": { "value": { "interpretedValue": "S2023001" } }
+      }
+    }
+  },
+  "inputTranscript": "student info S2023001"
+}
+
+
+Test → expect a message with the student details.
+If you see AccessDenied → re-check IAM policy;
+If KeyError: 'STUDENTS_TABLE' → you didn’t save env vars.

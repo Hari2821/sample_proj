@@ -1,0 +1,24 @@
+1) Create DynamoDB tables (us-east-1)
+A. Students table
+
+DynamoDB → Tables → Create table
+
+Table name: Students
+
+Partition key: student_id (String)
+
+Capacity mode: On-demand
+
+Create table
+
+B. Faqs table
+
+Create table
+
+Table name: Faqs
+
+Partition key: faq_id (String)
+
+Capacity: On-demand
+
+Create table

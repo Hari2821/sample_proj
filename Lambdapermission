@@ -1,0 +1,36 @@
+E. Give Lambda permissions to read DynamoDB + write logs
+
+Go to Configuration → Permissions → Execution role (click role name) → Add permissions → Create inline policy → JSON:
+
+Replace ACCOUNT_ID with your 12-digit AWS account id.
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DDBReadAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:DescribeTable"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:us-east-1:AWS id:table/Student",
+        "arn:aws:dynamodb:us-east-1:AWS id:table/Faqs"
+      ]
+    },
+    {
+      "Sid": "LogsBasic",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-1:AWS id:*"
+    }
+  ]
+}

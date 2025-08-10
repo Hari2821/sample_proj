@@ -1,0 +1,24 @@
+Create the Lambda function (Python 3.12)
+A. Function
+
+Lambda → Create function
+
+Name: collegeHelpdeskHandler
+
+Runtime: Python 3.12
+
+Architecture: x86_64
+
+Execution role: Create a new role with basic permissions
+
+Create function
+
+B. Environment variables (Configuration → Environment variables → Edit)
+
+STUDENTS_TABLE = Students
+FAQS_TABLE     = Faqs
+C. Increase timeout
+Configuration → General configuration → Edit → Timeout = 15 seconds → Save.
+
+D. Paste code (Code tab → replace contents → Deploy)
+(Check the .py file)
